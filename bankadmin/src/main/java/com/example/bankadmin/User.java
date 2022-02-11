@@ -1,8 +1,5 @@
 package com.example.bankadmin;
 
-
-
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;

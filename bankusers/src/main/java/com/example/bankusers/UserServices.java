@@ -25,4 +25,21 @@ public class UserServices {
         User temp=userRepo.findById(id).orElse(null);
         return temp.getName();
     }
+    public User deposit(String id,String amt){
+        User temp=userRepo.findById(id).orElse(null);
+        temp.setBalance(String.valueOf(Integer.parseInt(temp.getBalance())+Integer.parseInt(amt)));
+        userRepo.save(temp);
+        System.out.println(temp);
+        return temp;
+    }
+    public User withdrawl(String id,String amt){
+        User temp=userRepo.findById(id).orElse(null);
+        if(Integer.parseInt(temp.getBalance())<Integer.parseInt(amt)){
+            temp.setBalance(String.valueOf(0));
+        }else{
+            temp.setBalance(String.valueOf(Integer.parseInt(temp.getBalance())-Integer.parseInt(amt)));
+        }
+        userRepo.save(temp);
+        return temp;
+    }
 }
