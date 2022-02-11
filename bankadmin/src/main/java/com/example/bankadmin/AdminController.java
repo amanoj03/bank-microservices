@@ -40,11 +40,6 @@ public class AdminController {
         return adminService.updateUser(id, user);
     }
 
-    
-    // @RequestMapping(method = RequestMethod.PUT,value = "/update/email/{id}/{email}")
-    // public User updateEmail(@PathVariable String id,@PathVariable String email){
-    //     return adminService.updateEmail(id, email);
-    // }
     @RequestMapping(method = RequestMethod.PUT,value = "/update/phone/{id}/{phone}")
     public User updatePhone(@PathVariable String id,@PathVariable String phone){
         return adminService.updatePhone(id, phone);
